@@ -15,13 +15,15 @@ body {
 
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
   width: 870px;
   background-color: #fff;
   padding: 30px;
+  margin-top: 21px;
 }
 
 /* Top Players and Top Blogs Styles Start */
@@ -106,4 +108,123 @@ main {
   font-size: 16px;
   font-weight: 400;
 }
-/* Top Players and Top Blogs Styles End */ ;
+/* Top Players and Top Blogs Styles End */
+
+/* Latest Course Styles Start */
+.latest-courses .section-title {
+  color: #562eff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 23px;
+  padding: 12px;
+}
+
+.courses .course-banner {
+  width: 100%;
+}
+
+.courses .course-banner img {
+  width: 100%;
+}
+
+.courses .course .course-title {
+  color: #1e1e1e;
+  font-size: 20.0336px;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+.courses .course .course-author a {
+  text-decoration: none;
+  color: #ed6b4f;
+  font-size: 14.6913px;
+  font-weight: 400;
+}
+
+.courses .course-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.courses .course-info .ratings {
+  display: flex;
+  align-items: center;
+}
+
+.courses .course .course-info .ratings .fa-star {
+  font-size: 12px;
+}
+
+.courses .course .course-info .ratings p {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.courses .course .course-info .ratings .fa-star.filled {
+  color: #ffc014;
+}
+
+.courses .course .course-info .ratings .fa-star.empty {
+  color: #aeaeae;
+}
+
+.courses .course .course-info .course-duration {
+  color: #ff4a60;
+  font-size: 14.6913px;
+  font-weight: 600;
+}
+/* Latest Course Styles End */
+
+/* Media Queries */
+/* For Mobile Devices */
+@media only screen and (max-width: 688px) {
+  .container {
+    width: 100%;
+  }
+
+  .players,
+  .blogs,
+  .courses {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .blogs .blog {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .blogs .blog .blog-info {
+    margin-left: 0px;
+  }
+
+  .courses {
+    padding-left: 0;
+  }
+
+  .courses .course {
+    margin-bottom: 20px;
+  }
+}
+
+/* For Tablet Devices */
+@media only screen and (min-width: 689px) and (max-width: 922px) {
+  .container {
+    width: 100%;
+  }
+
+  .players {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 22px;
+  }
+}
